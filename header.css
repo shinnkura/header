@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  padding: 0;
+}
+
 .header {
   height: 60px;
   align-items: center;
@@ -19,7 +23,7 @@ a {
   .left {
     display: flex;
     img {
-      margin-left: 45px;
+      margin-left: 60px;
     }
   }
   .right {
@@ -127,6 +131,18 @@ a {
   background: white;
   transition: left 0.5s ease; /* アニメーションを滑らかにする */
   padding-top: 20px;
+
+  p {
+    color: #70b2e1;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+.regist {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 40px;
+  padding-bottom: 28px;
 }
 
 /* メニュー黒ポチを消す */
@@ -135,8 +151,14 @@ a {
 }
 
 .nav_item a {
-  color: #333;
-  text-decoration: none;
+  color: #427480;
+  display: flex;
+  font-size: 14px;
+  padding: 10px 20px;
+  position: relative;
+  &:hover {
+    background-color: #fff9f4;
+  }
 }
 
 /* アイコンがクリックされたらメニューを表示 */
