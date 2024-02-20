@@ -107,11 +107,13 @@ a {
 #drawer_input:checked ~ .drawer_open span::before {
   bottom: 0;
   transform: rotate(45deg);
+  background-color: white;
 }
 
 #drawer_input:checked ~ .drawer_open span::after {
   top: 0;
   transform: rotate(-45deg);
+  background-color: white;
 }
 
 /* メニューのデザイン*/
@@ -122,9 +124,8 @@ a {
   top: 0;
   left: -20%; /* メニューを画面の左側外に隠す */
   z-index: 99;
-  background: rgb(110, 110, 110);
+  background: white;
   transition: left 0.5s ease; /* アニメーションを滑らかにする */
-  text-align: center;
   padding-top: 20px;
 }
 
@@ -134,13 +135,29 @@ a {
 }
 
 .nav_item a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
 }
 
 /* アイコンがクリックされたらメニューを表示 */
 #drawer_input:checked ~ .nav_content {
   left: 0;
+}
+
+.overlay {
+  display: none; /* 初期状態では非表示 */
+  position: fixed; /* 画面全体に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* ビューポートの幅全体 */
+  height: 100vh; /* ビューポートの高さ全体 */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒色 */
+  z-index: 98; /* ナビゲーションメニューよりも下、コンテンツよりも上に表示 */
+}
+
+/* ハンバーガーメニューがチェックされたときにオーバーレイを表示 */
+#drawer_input:checked ~ .overlay {
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
