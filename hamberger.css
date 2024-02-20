@@ -74,7 +74,7 @@
 
 /* メニューのデザイン*/
 .nav_content {
-  width: 100%;
+  width: 20%;
   height: 100%;
   position: fixed;
   top: 0%;
@@ -98,5 +98,5 @@
 
 /* アイコンがクリックされたらメニューを表示 */
 #drawer_input:checked ~ .nav_content {
-  right: 0;
+  left: 0;
 }
