@@ -74,14 +74,14 @@
 
 /* メニューのデザイン*/
 .nav_content {
-  width: 20%;
+  width: 240px;
   height: 100%;
   position: fixed;
-  top: 0%;
-  right: 100%; /* メニューを画面の外に飛ばす */
+  top: 0;
+  left: -20%; /* メニューを画面の左側外に隠す */
   z-index: 99;
   background: rgb(110, 110, 110);
-  transition: 0.5s;
+  transition: left 0.5s ease; /* アニメーションを滑らかにする */
   text-align: center;
   padding-top: 20px;
 }
