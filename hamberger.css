@@ -56,6 +56,10 @@
   top: 8px;
 }
 
+#drawer_input:checked ~ .drawer_open {
+  left: 240px;
+}
+
 /* アイコンがクリックされたら真ん中の線を透明にする */
 #drawer_input:checked ~ .drawer_open span {
   background: rgba(255, 255, 255, 0);
