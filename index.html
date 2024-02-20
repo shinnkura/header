@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Example</title>
+    <link rel="stylesheet" href="./header.css" />
+  </head>
+  <body>
+    <header class="header root search">
+      <div class="left">
+        <div class="hamburger__button" onclick="toggleSidebar()">
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+        <a href="/">
+          <img src="./img/logo.svg" width="100" height="40" alt="Simple株式会社ロゴ" />
+        </a>
+      </div>
+      <div class="right">
+        <a href="/" class="link size">
+          <p>まずはご登録から</p>
+        </a>
+      </div>
+    </header>
+    <!-- sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar content here -->
+      <div class="hide__button" onclick="toggleSidebar()">
+        <p>転職ノウハウ</p>
+        <p>転職ノウハウ</p>
+        <p>転職ノウハウ</p>
+      </div>
+    </div>
+    <!-- mask -->
+    <div class="mask" onclick="toggleSidebar()"></div>
+
+    <script>
+      let isShow = false;
+
+      function toggleSidebar() {
+        isShow = !isShow;
+        document.querySelector(".sidebar").classList.toggle("active", isShow);
+        document.querySelector(".mask").classList.toggle("active", isShow);
+      }
+    </script>
+  </body>
+</html>

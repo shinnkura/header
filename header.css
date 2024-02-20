@@ -1,0 +1,126 @@
+/* header
+--------------------*/
+.header {
+  height: 60px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  filter: drop-shadow(0 0 3px rgba(40, 40, 40, 0.2));
+  flex-wrap: wrap;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  .left {
+    display: flex;
+    .hamburger__button {
+      position: relative;
+      top: 3px;
+      p {
+        width: 30px;
+        height: 3.5px;
+        background-color: #333;
+        margin: 5px 0;
+      }
+    }
+    img {
+      margin-left: 20px;
+    }
+  }
+  .right {
+    margin-left: auto;
+    .enroll {
+      width: 240px;
+    }
+  }
+  /*  searchページで、headerの追従を解除 */
+  &:global(.search) {
+    position: static;
+  }
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+/* チェックボックスがチェックされたときのサイドバーとマスクのスタイル */
+.toggle-checkbox:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+.toggle-checkbox:checked ~ .mask {
+  display: block;
+}
+
+/* sidebar (hamburger menu)
+  --------------------*/
+.sidebar {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  z-index: 5;
+  transition: 0.3s all;
+  transform: translateX(-130%);
+  &:global(.active) {
+    transform: none;
+  }
+  .hide__button {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    transform: translateX(100%);
+    cursor: pointer;
+    p {
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      &:nth-child(1) {
+        transform: rotate(45deg) translateY(3px);
+      }
+      &:nth-child(2) {
+        transform: rotate(-45deg) translateY(-3px);
+      }
+    }
+  }
+}
+
+/* mask
+  --------------------*/
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  opacity: 0.3;
+  display: none;
+  &:global(.active) {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    .right {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    &:global(.root) {
+      display: none;
+    }
+  }
+}
