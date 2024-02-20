@@ -9,7 +9,7 @@
   <body>
     <header class="header root search">
       <div class="left">
-        <div class="hamburger__button" onclick="toggleSidebar()">
+        <div class="hamburger__button">
           <p></p>
           <p></p>
           <p></p>
@@ -19,31 +19,19 @@
         </a>
       </div>
       <div class="right">
-        <a href="/" class="link size">
-          <p>まずはご登録から</p>
-        </a>
+        <a href="/" class="link">まずはご登録から</a>
       </div>
     </header>
     <!-- sidebar -->
     <div class="sidebar">
       <!-- Sidebar content here -->
-      <div class="hide__button" onclick="toggleSidebar()">
+      <div class="hide__button">
         <p>転職ノウハウ</p>
         <p>転職ノウハウ</p>
         <p>転職ノウハウ</p>
       </div>
     </div>
     <!-- mask -->
-    <div class="mask" onclick="toggleSidebar()"></div>
-
-    <script>
-      let isShow = false;
-
-      function toggleSidebar() {
-        isShow = !isShow;
-        document.querySelector(".sidebar").classList.toggle("active", isShow);
-        document.querySelector(".mask").classList.toggle("active", isShow);
-      }
-    </script>
+    <div class="mask"></div>
   </body>
 </html>
