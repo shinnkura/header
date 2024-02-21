@@ -188,6 +188,10 @@ ul {
       display: none;
     }
   }
+
+  .nav_content {
+    left: -102%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
